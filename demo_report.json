@@ -1,0 +1,311 @@
+{
+  "experiment": "Jal Sakhi CSV telemetry replay over a configurable lossy link",
+  "configuration": {
+    "data": "dataset.csv",
+    "model": "model_params.h",
+    "gateway_url": "http://127.0.0.1:5000",
+    "loss": 0.1,
+    "retries": 2,
+    "outage_every": 0,
+    "limit": 200,
+    "seed": 11,
+    "report": "demo_report.json",
+    "evidence_limit": 5
+  },
+  "network_model": {
+    "loss": "per-attempt simulated link loss",
+    "retries": "maximum additional sends after the first attempt",
+    "outage_every": "all attempts for every Nth packet are dropped"
+  },
+  "statistics": {
+    "readings": 200,
+    "attempts": 225,
+    "first_attempt_deliveries": 177,
+    "retry_recoveries": 23,
+    "delivered": 200,
+    "failed_deliveries": 0,
+    "network_dropped": 25,
+    "forced_outage_attempts": 0,
+    "gateway_unavailable": 0,
+    "unsafe_samples": 25,
+    "watch_samples": 13,
+    "delivery_rate": 1.0
+  },
+  "reliability": {
+    "delivery_rate": 1.0,
+    "first_attempt_success_rate": 0.885,
+    "retry_recovery_rate": 0.115,
+    "mean_attempts_per_reading": 1.125
+  },
+  "detection_against_dataset_labels": {
+    "true_positive": 25,
+    "false_negative": 11,
+    "false_positive": 0,
+    "true_negative": 164,
+    "unsafe_recall": 0.6944,
+    "false_positive_rate": 0.0
+  },
+  "unsafe_packet_examples": [
+    {
+      "seq": 8,
+      "timestamp": "2026-08-24T07:45:00",
+      "score": 34.5166,
+      "reasons": [
+        "statistical anomaly",
+        "high turbidity"
+      ],
+      "delivery": "delivered",
+      "attempts_used": 1
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-08-24T08:00:00",
+      "score": 51.1171,
+      "reasons": [
+        "statistical anomaly",
+        "high turbidity"
+      ],
+      "delivery": "delivered",
+      "attempts_used": 1
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-08-24T08:15:00",
+      "score": 50.2383,
+      "reasons": [
+        "statistical anomaly",
+        "high turbidity"
+      ],
+      "delivery": "delivered",
+      "attempts_used": 1
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-08-24T08:30:00",
+      "score": 50.8087,
+      "reasons": [
+        "statistical anomaly",
+        "high turbidity"
+      ],
+      "delivery": "delivered",
+      "attempts_used": 2
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-08-24T08:45:00",
+      "score": 50.4614,
+      "reasons": [
+        "statistical anomaly",
+        "high turbidity"
+      ],
+      "delivery": "delivered",
+      "attempts_used": 2
+    }
+  ],
+  "gateway_summary_after_run": {
+    "packets_received": 200,
+    "open_alerts": 25,
+    "alerts": [
+      {
+        "ticket_id": "JS-0001",
+        "node_id": "VLR-TK-01",
+        "seq": 8,
+        "timestamp": "2026-08-24T07:45:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0002",
+        "node_id": "VLR-TK-01",
+        "seq": 9,
+        "timestamp": "2026-08-24T08:00:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0003",
+        "node_id": "VLR-TK-01",
+        "seq": 10,
+        "timestamp": "2026-08-24T08:15:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0004",
+        "node_id": "VLR-TK-01",
+        "seq": 11,
+        "timestamp": "2026-08-24T08:30:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0005",
+        "node_id": "VLR-TK-01",
+        "seq": 12,
+        "timestamp": "2026-08-24T08:45:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0006",
+        "node_id": "VLR-TK-01",
+        "seq": 13,
+        "timestamp": "2026-08-24T09:00:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0007",
+        "node_id": "VLR-TK-01",
+        "seq": 14,
+        "timestamp": "2026-08-24T09:15:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0008",
+        "node_id": "VLR-TK-01",
+        "seq": 15,
+        "timestamp": "2026-08-24T09:30:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0009",
+        "node_id": "VLR-TK-01",
+        "seq": 16,
+        "timestamp": "2026-08-24T09:45:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0010",
+        "node_id": "VLR-TK-01",
+        "seq": 17,
+        "timestamp": "2026-08-24T10:00:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0011",
+        "node_id": "VLR-TK-01",
+        "seq": 18,
+        "timestamp": "2026-08-24T10:15:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0012",
+        "node_id": "VLR-TK-01",
+        "seq": 76,
+        "timestamp": "2026-08-25T00:45:00",
+        "reason": 1,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0013",
+        "node_id": "VLR-TK-01",
+        "seq": 77,
+        "timestamp": "2026-08-25T01:00:00",
+        "reason": 1,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0014",
+        "node_id": "VLR-TK-01",
+        "seq": 118,
+        "timestamp": "2026-08-25T11:15:00",
+        "reason": 1,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0015",
+        "node_id": "VLR-TK-01",
+        "seq": 119,
+        "timestamp": "2026-08-25T11:30:00",
+        "reason": 1,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0016",
+        "node_id": "VLR-TK-01",
+        "seq": 120,
+        "timestamp": "2026-08-25T11:45:00",
+        "reason": 1,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0017",
+        "node_id": "VLR-TK-01",
+        "seq": 162,
+        "timestamp": "2026-08-25T22:15:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0018",
+        "node_id": "VLR-TK-01",
+        "seq": 163,
+        "timestamp": "2026-08-25T22:30:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0019",
+        "node_id": "VLR-TK-01",
+        "seq": 164,
+        "timestamp": "2026-08-25T22:45:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0020",
+        "node_id": "VLR-TK-01",
+        "seq": 165,
+        "timestamp": "2026-08-25T23:00:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0021",
+        "node_id": "VLR-TK-01",
+        "seq": 166,
+        "timestamp": "2026-08-25T23:15:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0022",
+        "node_id": "VLR-TK-01",
+        "seq": 167,
+        "timestamp": "2026-08-25T23:30:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0023",
+        "node_id": "VLR-TK-01",
+        "seq": 168,
+        "timestamp": "2026-08-25T23:45:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0024",
+        "node_id": "VLR-TK-01",
+        "seq": 169,
+        "timestamp": "2026-08-26T00:00:00",
+        "reason": 5,
+        "status": "open"
+      },
+      {
+        "ticket_id": "JS-0025",
+        "node_id": "VLR-TK-01",
+        "seq": 170,
+        "timestamp": "2026-08-26T00:15:00",
+        "reason": 5,
+        "status": "open"
+      }
+    ]
+  }
+}
